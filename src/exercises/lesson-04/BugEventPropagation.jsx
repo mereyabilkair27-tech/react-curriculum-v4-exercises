@@ -6,7 +6,8 @@ export default function BugEventPropagation() {
     alert("RED BOX CLICKED ❌ Don't show me!");
   }
 
-  function handleInnerClick() {
+  function handleInnerClick(event) {
+    event.stopPropagation();
     alert('Button Clicked ✅');
   }
 
@@ -22,3 +23,5 @@ export default function BugEventPropagation() {
     </>
   );
 }
+
+// it prevents the click from reaching the parent
